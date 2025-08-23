@@ -20,7 +20,7 @@ function LogoutButton ({ login }) {
       }).then(data => {
         if (data.status == "deleted") {
           localStorage.clear();
-          navigate("/", { replace: false });
+          navigate(`${import.meta.env.VITE_APP_BASE_MAIN_PATH}`, { replace: false });
         } else {
           alert("Возникла техническая ошибка, попробуйте зайти на сайт позже");
         }

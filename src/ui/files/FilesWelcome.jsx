@@ -6,7 +6,7 @@ import { Navigate } from "react-router-dom";
 
 
 function FilesWelcomeForAdmin ({state}) {
-  return <Navigate to='/admin' state={state} replace={false} />;
+  return <Navigate to={`${import.meta.env.VITE_APP_BASE_MAIN_PATH}/admin`} state={state} replace={false} />;
 }
 
 function FilesWelcomeForSimpleUsers ({id, name, login}) {    

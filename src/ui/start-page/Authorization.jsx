@@ -29,7 +29,7 @@ export function Authorization ({ SetViewPage }) {
     .then((data) => {
       if (data.status_code === 200) {
         console.log("Вы успешно авторизовались", data)
-        navigate('/files', { state: data.user[0], replace: false});
+        navigate(`${import.meta.env.VITE_APP_BASE_MAIN_PATH}/files`, { state: data.user[0], replace: false});
       }
     });
     }
@@ -69,7 +69,7 @@ export function Authorization ({ SetViewPage }) {
         localStorage.setItem('userLogin', inputInfo.login);
         localStorage.setItem('userPassword', inputInfo.password);
 
-        navigate('/files', { state: data, replace: false }); 
+        navigate(`${import.meta.env.VITE_APP_BASE_MAIN_PATH}/files`, { state: data, replace: false }); 
       } 
     });
   };
